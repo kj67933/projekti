@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+
+        #login-section {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #login-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #login-form button {
+            background-color: #405de6;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #login-form button:hover {
+            background-color: #2e3aa1;
+        }
+
+        #message-box {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+    </style>
+    <title>Phone Store</title>
+</head>
+<body>
+
+    <header>
+        <h1>KD PHONES</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Log In</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+     
+
+        
+        <section id="login-section">
+            <h2>Login</h2>
+            
+            
+            <div id="message-box">
+                Type 8 characters or more to log in.
+            </div>
+
+            <form id="login-form" onsubmit="validateForm(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Phone Store</p>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Log In</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); 
+
+           
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            
+            if (username.length >= 8 && password.length >= 8) {
+                
+                window.location.href = "about.html";
+            } else {
+                alert("Bad username and password. Both should have at least 8 characters.");
+            }
+        }
+    </script>
+</body>
+</html>
